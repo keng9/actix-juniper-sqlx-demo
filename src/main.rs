@@ -43,7 +43,6 @@ async fn main() -> Result<()> {
     let address= "0.0.0.0:8080";
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL is not set in .env file");
     let  pool = PgPool::connect(&database_url).await?;
-
     let schema = std::sync::Arc::new(create_schema());
     // Start http server
     HttpServer::new(move || {
@@ -66,9 +65,6 @@ async fn main() -> Result<()> {
         .bind(address)?
         .run()
         .await?;
-
-
-
 
     Ok(())
 }
