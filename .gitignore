@@ -1,0 +1,5 @@
+/target
+docker-compose.yaml
+Makefile
+.env
+.idea
